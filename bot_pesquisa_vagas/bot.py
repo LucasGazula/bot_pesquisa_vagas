@@ -1,8 +1,9 @@
 # Import for the Web Bot
 from botcity.web import WebBot, Browser, By
 from webdriver_manager.chrome import ChromeDriverManager
-from model import inicia_navegacao
-from model.gupy import Gupy
+from services import inicia_navegacao
+from bot_pesquisa_vagas.services.scrapping_gupy import Gupy
+from bot_pesquisa_vagas.services.scrapping_glassdoor import Glassdoor
 import os
 from dotenv import load_dotenv
 
@@ -15,6 +16,7 @@ from botcity.maestro import *
 BotMaestroSDK.RAISE_NOT_CONNECTED = False
 
 gupy = Gupy()
+glassdor = Glassdoor()
 
 def main():
     
@@ -27,9 +29,14 @@ def main():
     gupy.pesquisa(bot)
     
     gupy.visualiza_vaga(bot)
+    
+    glassdor.acessar_gupy(bot)
+    glassdor.pesquisa_glassdoor(bot)
+    
 
     # Configure whether or not to run on headless mode
     # Wait 3 seconds before closing
+    
     bot.wait(3000)
 
     # Finish and clean up the Web Browser

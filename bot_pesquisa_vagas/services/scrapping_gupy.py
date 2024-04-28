@@ -38,6 +38,8 @@ class Gupy:
         local_vagas = local_vagas.find_elements_by_tag_name('li')
         
         for vaga in local_vagas:
-            print(vaga.text)
+            linhas = vaga.text
+            linhas = linhas.strip().split('\n')
+            for linha in linhas:
+                print(linha)
             print('------------------------------------------')
-        

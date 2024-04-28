@@ -1,0 +1,28 @@
+[32mIniciando navegador - SUCESSO[0m
+[31mIniciando navegador - FALHA[0m
+[32mIniciando navegador - SUCESSO[0m
+[31mIniciando navegador - FALHA[0m
+[32m[2024-04-27 21:15:06] Iniciando navegador - SUCESSO[0m
+[31m[2024-04-27 21:15:06] Iniciando navegador - FALHA[0m
+[32m[2024-04-27 21:16:53] Iniciando navegador - SUCESSO[0m
+[31m[2024-04-27 21:16:53] Iniciando navegador - FALHA[0m
+[32m[2024-04-27 21:17:17] Iniciando navegador - SUCESSO[0m
+[31m[2024-04-27 21:17:17] Iniciando navegador - FALHA[0m
+[32m[2024-04-27 21:17:26] Iniciando navegador - SUCESSO[0m
+[31m[2024-04-27 21:17:26] Iniciando navegador - FALHA[0m
+[2024-04-27 21:19:27] Iniciando navegador - SUCESSO
+[2024-04-27 21:19:27] Iniciando navegador - FALHA
+[2024-04-27 21:19:40] Iniciando navegador - SUCESSO
+[2024-04-27 21:19:40] Iniciando navegador - FALHA
+[2024-04-27 21:21:08] Iniciando navegador - SUCESSO
+[2024-04-27 21:21:08] Iniciando navegador - FALHA
+[2024-04-27 21:21:20] Iniciando navegador - SUCESSO
+[2024-04-27 21:21:20] Iniciando navegador - FALHA
+[2024-04-27 21:21:38] Iniciando navegador - SUCESSO
+[2024-04-27 21:21:38] Iniciando navegador - FALHA
+[2024-04-27 21:21:54] Iniciando navegador - SUCESSO
+[2024-04-27 21:21:54] Iniciando navegador - FALHA
+[2024-04-27 21:22:32] Iniciando navegador - SUCESSO
+[2024-04-27 21:22:32] Iniciando navegador - FALHA
+[2024-04-28 00:29:57] Iniciando navegador - SUCESSO
+[2024-04-28 00:29:57] Iniciando navegador - FALHA
