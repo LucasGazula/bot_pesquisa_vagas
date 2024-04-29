@@ -2,8 +2,9 @@
 from botcity.web import WebBot, Browser, By
 from webdriver_manager.chrome import ChromeDriverManager
 from services import inicia_navegacao
-from bot_pesquisa_vagas.services.scrapping_gupy import Gupy
-from bot_pesquisa_vagas.services.scrapping_glassdoor import Glassdoor
+from services.scrapping_gupy import ScrappingGupy
+from services.scrapping_glassdoor import Glassdoor
+from repository.gupy import Gupy
 import os
 from dotenv import load_dotenv
 
@@ -15,20 +16,22 @@ from botcity.maestro import *
 # Disable errors if we are not connected to Maestro
 BotMaestroSDK.RAISE_NOT_CONNECTED = False
 
+scrapping_gupy = ScrappingGupy()
 gupy = Gupy()
+
 glassdor = Glassdoor()
 
 def main():
     
     bot = inicia_navegacao()
      
-    gupy.acessar_gupy(bot)
+    scrapping_gupy.acessar_gupy(bot)
     
-    gupy.verifica_btn(bot)
+    scrapping_gupy.verifica_btn(bot)
     
-    gupy.pesquisa(bot)
+    scrapping_gupy.pesquisa(bot)
     
-    gupy.visualiza_vaga(bot)
+    scrapping_gupy.visualiza_vaga(bot, gupy)
     
     glassdor.acessar_gupy(bot)
     glassdor.pesquisa_glassdoor(bot)

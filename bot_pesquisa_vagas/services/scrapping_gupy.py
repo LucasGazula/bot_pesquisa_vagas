@@ -1,11 +1,16 @@
 import os
 from dotenv import load_dotenv
 from botcity.web import WebBot, Browser, By
+from repository.gupy import Gupy
+from repository.conexao_mongo import BancoGupy
+from utils import log
 load_dotenv()
 
+banco_gupy = BancoGupy()
+gupy = Gupy()
 # //*[@id="radix-0"]/div[2]/button
 
-class Gupy:
+class ScrappingGupy:
     
     def acessar_gupy(self, bot):
         bot.browse(os.getenv("link_gupy"))
@@ -33,13 +38,45 @@ class Gupy:
                 btn_lupa.click()
             except Exception as e:
                 print(e)
-    def visualiza_vaga(self, bot):
+    def visualiza_vaga(self, bot, gupy):
         local_vagas = bot.find_element('//*[@id="main-content"]/ul', By.XPATH, waiting_time = 10000, ensure_visible = True)
         local_vagas = local_vagas.find_elements_by_tag_name('li')
         
         for vaga in local_vagas:
             linhas = vaga.text
             linhas = linhas.strip().split('\n')
-            for linha in linhas:
-                print(linha)
+            if len(linhas) == 6:
+                gupy.nome_empresa = linhas[0]
+                gupy.nome_vaga = linhas[1]
+                gupy.local_vaga = linhas[2]
+                gupy.modelo_trabalho = linhas[3]
+                gupy.tipo_vaga = linhas[4]
+                gupy.disponibilidade_pcd = None
+                gupy.data_publicacao = linhas[5]
+                
+                try:
+                    banco_gupy.insere_vaga(gupy)
+                    log('Foi possível inserir no banco de dados', "SUCESSO")
+                except Exception as e:
+                    log('Não foi impossível inserir no banco de dados', "FALHA")
+                    print(e)                    
+                      
+            elif len(linhas) == 7:
+                gupy.nome_empresa = linhas[0]
+                gupy.nome_vaga = linhas[1]
+                gupy.local_vaga = linhas[2]
+                gupy.modelo_trabalho = linhas[3]
+                gupy.tipo_vaga = linhas[4]
+                gupy.disponibilidade_pcd = linhas[5]
+                gupy.data_publicacao = linhas[6]
+                
+                try:
+                    banco_gupy.insere_vaga(gupy)
+                    log('Foi possível inserir no banco de dados', "SUCESSO")
+                except Exception as e:
+                    log('Não foi impossível inserir no banco de dados', "FALHA")
+                    print(e)                    
+                    
+                
             print('------------------------------------------')
+

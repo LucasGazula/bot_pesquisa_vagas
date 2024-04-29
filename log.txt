@@ -26,3 +26,13 @@
 [2024-04-27 21:22:32] Iniciando navegador - FALHA
 [2024-04-28 00:29:57] Iniciando navegador - SUCESSO
 [2024-04-28 00:29:57] Iniciando navegador - FALHA
+[2024-04-28 02:43:27] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:32] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:32] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:32] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:32] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:32] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:33] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:33] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:33] Foi possível inserir no banco de dados - SUCESSO
+[2024-04-28 02:43:33] Foi possível inserir no banco de dados - SUCESSO
